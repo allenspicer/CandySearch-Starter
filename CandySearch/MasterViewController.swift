@@ -81,6 +81,10 @@ class MasterViewController: UITableViewController {
   }
   
   override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    if searchController.active && searchController.searchBar.text != ""{
+        return filteredCandies.count
+    }
+    
     return candies.count
   }
   
